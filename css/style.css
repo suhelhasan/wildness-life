@@ -255,3 +255,36 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
+
+.js-accordion dd {
+  display: none;
+}
+
+.js-accordion dt {
+  cursor: pointer;
+}
+
+.js-accordion dt::after {
+  content: '⬎';
+  margin-left: 10px;
+}
+
+.js-accordion dt.active::after {
+  content: '⬏';
+}
+
+.js-accordion dd.active {
+  display: block;
+  animation: slideDown .3s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
