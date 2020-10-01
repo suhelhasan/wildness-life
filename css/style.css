@@ -242,7 +242,7 @@ body {
 
 .js-tabcontent section.active {
   display: block;
-  animation: show .5s forwards;
+  animation: show 0.5s forwards;
 }
 
 @keyframes show {
@@ -265,17 +265,17 @@ body {
 }
 
 .js-accordion dt::after {
-  content: '⬎';
+  content: "⬎";
   margin-left: 10px;
 }
 
 .js-accordion dt.active::after {
-  content: '⬏';
+  content: "⬏";
 }
 
 .js-accordion dd.active {
   display: block;
-  animation: slideDown .3s forwards;
+  animation: slideDown 0.3s forwards;
 }
 
 @keyframes slideDown {
@@ -287,4 +287,15 @@ body {
     opacity: 1;
     max-height: 500px;
   }
+}
+
+.js-scroll {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: 0.5s;
+}
+
+.js-scroll.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
