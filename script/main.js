@@ -1,4 +1,4 @@
-const classActive = "active";
+const activeClass = "active";
 
 function initTab() {
   // conteudo aparecendo por tabs
@@ -8,13 +8,13 @@ function initTab() {
   const tabContent = document.querySelectorAll(".js-tabcontent section");
 
   if (tabMenu.length && tabContent.length) {
-    tabContent[0].classList.add(classActive);
+    tabContent[0].classList.add(activeClass);
 
     function activeTab(index) {
       for (section of tabContent) {
-        section.classList.remove(classActive);
+        section.classList.remove(activeClass);
       }
-      tabContent[index].classList.add(classActive);
+      tabContent[index].classList.add(activeClass);
     }
 
     tabMenu.forEach((itemMenu, index) => {
@@ -27,16 +27,16 @@ function initAccordion() {
   const accordionList = document.querySelectorAll(".js-accordion dt");
 
   if (accordionList.length) {
-    accordionList[0].classList.add(classActive);
-    accordionList[0].nextElementSibling.classList.add(classActive);
+    accordionList[0].classList.add(activeClass);
+    accordionList[0].nextElementSibling.classList.add(activeClass);
 
     accordionList.forEach((item) => {
       item.addEventListener("click", activeAccordion);
     });
   }
   function activeAccordion() {
-    this.classList.toggle(classActive);
-    this.nextElementSibling.classList.toggle(classActive);
+    this.classList.toggle(activeClass);
+    this.nextElementSibling.classList.toggle(activeClass);
   }
 }
 
@@ -66,14 +66,14 @@ function initAnimaAoScroll() {
   if (sections.length) {
     const metadeTela = window.innerHeight * 0.6;
 
-    sections[0].classList.add(classActive);
+    sections[0].classList.add(activeClass);
 
     function animaAoScroll() {
       sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top - metadeTela;
         const isSectionVisible = sectionTop - metadeTela < 0;
         if (isSectionVisible) {
-          section.classList.add(classActive);
+          section.classList.add(activeClass);
         }
       });
     }
